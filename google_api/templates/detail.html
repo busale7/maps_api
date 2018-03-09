@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="jumbotron">
+  <h1 class="display-4">{{response.result.name}}</h1>
+  <p class="lead">{{response.result.formatted_address}}</p>
+  <hr class="my-4">
+  <p>{{response.result.website}}</p>
+  <p>Latitude :{{response.result.geometry.location.lat}}</p>
+  <p>Longitude :{{response.result.geometry.location.lng}}</p>
+	<iframe width="600" height="450" frameborder="0" style="border:0"
+	  src="https://www.google.com/maps/embed/v1/place?key={{map}}&q={{response.result.geometry.location.lat}},{{response.result.geometry.location.lng}}" allowfullscreen>
+	</iframe>
+</div>
+
+{% endblock %}

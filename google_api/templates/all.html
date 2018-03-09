@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'place-search' %}" method="GET" >
+	<div class="input-group mb-3">
+	  <input type="text" class="form-control" placeholder="Search HERE " name="query">
+	  <div class="input-group-append">
+	    <input type="submit" value="Search" class=" btn btn-outline-primary">
+	  </div>
+	</div>
+</form>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Address </th>
+      <th scope="col">Opening Hours</th>
+      <th scope="col">rating</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for place in response.results %}
+    <tr>
+      <th scope="row">{{place.name}}</th>
+      <td> {{place.formatted_address}}</td>
+      <td>{{place.opening_hours.open_now}}</td>
+      <td>{{place.rating}}/5</td>
+      <td> 
+      	<form action="{% url 'place_detail' %}" method="GET">
+      		<input type="hidden" value="{{place.place_id}}" name="id">
+      		<input type="submit" value="Detail Page" class="btn btn-outline-info">
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% if response.next_page_token %}
+<form action="{% url 'place-search' %}" method="GET"> 
+	<input type="hidden"  value="{{response.next_page_token}}" name="pt">
+	<input type="Submit" class="btn btn-outline-primary" value="More Results">
+</form>
+
+{% endif %}
+{% endblock content %}

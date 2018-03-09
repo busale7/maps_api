@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>
+
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+
+	
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand"> <img src="https://image.ibb.co/kwOfGS/M.jpg" width="30" height="30" class="d-inline-block align-top" alt="HEllo Coded">@_@ </a>
+  <div align="right">
+
+  <form class="form-inline">
+  
+    <button class="btn btn-outline-success" type="button"><a href="">Business</button> </a>
+    <button class="btn btn-outline-success" type="button"><a href="{% url 'place-search' %}">home</button> </a>
+     
+    
+
+  </form>
+</nav>
+</head>
+<body>
+
+	<div class="container">
+
+
+		{% block content %}
+		{% endblock content %}
+		<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	</div>
+</body>
+</html>
