@@ -5,6 +5,10 @@ import requests
 
 # Create your views here.
 
+def homepage(request):
+	return render(request, 'home.html')
+
+	
 def place_search(request):
 	key = "AIzaSyAMo0n6AO7Abth2sE5IJDwpWjXgSK-mG0g"
 	query = "Costa"
@@ -52,4 +56,5 @@ def place_detail(request):
     }
     return render(request, 'detail.html', context)
     #return JsonResponse(response,safe=False)
+
 

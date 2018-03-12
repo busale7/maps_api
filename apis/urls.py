@@ -22,4 +22,6 @@ urlpatterns = [
     path('search/',views.place_search),
     path('all/',views.places_search,name='place-search'), 
     path('detail/',views.place_detail, name= 'place_detail'),
+    path('',views.homepage, name='home'),
+
 ]
