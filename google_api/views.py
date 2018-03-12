@@ -15,8 +15,8 @@ def place_search(request):
 	"response": response ,
 	}
 
-	#return render(request, 'places.html', context)
-	return JsonResponse(response,safe=False)
+	return render(request, 'places.html', context)
+	#return JsonResponse(response,safe=False)
 
 def places_search(request):
 	key = "AIzaSyAMo0n6AO7Abth2sE5IJDwpWjXgSK-mG0g"
