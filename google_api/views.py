@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse 
+from django.http import HttpResponse
+
 
 import requests
 
@@ -8,7 +10,7 @@ import requests
 def homepage(request):
 	return render(request, 'home.html')
 
-	
+
 def place_search(request):
 	key = "AIzaSyAMo0n6AO7Abth2sE5IJDwpWjXgSK-mG0g"
 	query = "Costa"
