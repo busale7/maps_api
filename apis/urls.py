@@ -26,6 +26,7 @@ urlpatterns = [
     path('detail/',place_detail, name= 'place_detail'),
     path('',homepage, name='home'),
     path('twitter/search',tweetsearch, name='tweet-search'),
+    path('twitter/post',tweetpost, name='tweet-post'),
 
 
 ]
